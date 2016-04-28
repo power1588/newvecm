@@ -1,0 +1,544 @@
+\documentclass[12pt]{article}
+
+% DEFAULT PACKAGE SETUP
+
+\usepackage{setspace,graphicx,epstopdf,amsmath,amsfonts,amssymb,amsthm,versionPO}
+\usepackage{marginnote,datetime,enumitem,subfigure,rotating,fancyvrb}
+\usepackage{hyperref,float}
+\usepackage[longnamesfirst]{natbib}
+\usepackage{graphics,amsfonts,bm}
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{amssymb}
+\usepackage{layout}
+\usepackage{epsfig}
+\usepackage{supertabular}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{dcolumn}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{latexsym}
+
+\usepackage{bm,array}
+\usepackage{dcolumn}
+\usepackage{color}
+
+
+
+\usepackage{threeparttable}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{setspace}
+%\usepackage{titlesec}
+
+\usepackage{graphics,amsfonts,bm}
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{amssymb}
+\usepackage{layout}
+\usepackage{epsfig}
+\usepackage{supertabular}
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\usepackage{helvet}
+\usepackage{titlesec}
+
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\fancypagestyle{mylandscape}{%
+  \fancyhf{}% Clear header/footer
+  \fancyfoot{% Footer
+    \makebox[\textwidth][r]{% Right
+      \rlap{\hspace{\footskip}% Push out of margin by \footskip
+        \smash{% Remove vertical height
+          \raisebox{\dimexpr.5\baselineskip+\footskip+.5\textheight}{% Raise vertically
+            \rotatebox{90}{\thepage}}}}}}% Rotate counter-clockwise
+  \renewcommand{\headrulewidth}{0pt}% No header rule
+  \renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+
+
+\usepackage{mathptmx,graphicx,pdflscape,changepage,sectsty,indentfirst,setspace,amsmath}
+\usepackage[margin=1in]{geometry}
+
+%\sectionfont{\centering}
+
+%\renewcommand \thesection{\Roman{section}}
+
+
+\subsectionfont{\noindent\raggedright\mdseries\bf}
+%\renewcommand\thesubsection{\Alph{subsection}}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname\quad}
+\makeatother
+%% Start document body
+\begin{document}
+%%%%%%%%%%%%% Create title %%%%%%%%%%%%%%%%%
+\title{\Large \bf  Are Index Futures a Bad Boy? Evidence from Chinese Index Futures Market}
+\author{ {\bf Hai Lin} \\ [-0.05cm]
+     Victoria University of Wellington \\ [0.2cm]
+        {\bf You Wang} \\ [-0.05cm]
+    Xiamen University \thanks{
+ %\vspace{.15in}
+ %\newline \noindent
+  {Correspondence:}   \ Hai Lin,  School of Economics and Finance, Victoria University of Wellington, Wellington 6140,
+New Zealand. Phone: (+64)- 4- 463- 5239 and email: hai.lin@vuw.ac.nz.  } }
+
+
+
+
+
+
+
+
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\begin{titlepage}
+\begin{center}
+
+\vspace{0.2in} {\bf Abstract}
+\end{center}
+\onehalfspacing
+
+This paper mainly investigates the impact of regulation changes on the market efficiency  and price discovery function of the Chinese stock index futures in 2015, where two index futures are newly established. Using auto-correlation, variance ratio and spectral tests, we find that both Chinese stock and index futures market become less efficient after these regulations changed.  By employing \cite{gonzalo1995} and \cite{hasbrouck1995} price discovery measures, however, we find that the price discovery functions of Chinese index futures market showed different scenarios after the regulations executed. We find that the relatively contribution of index futrues market on the price discovery increases under the new policy. This suggests that the new policies negatively affect the market efficiency of both index spot and futures market, and the negative impact on index spot market is more than that on index futures market. 
+
+
+
+
+
+\vspace{0.3in}
+
+ \vspace{.15in}   \noindent
+\vspace{.15in}   \noindent
+{\it JEL classification:}: \\
+\vspace{.15in}   \noindent
+ {\it Keywords}:
+
+
+\end{titlepage}
+
+\newpage
+
+\pagestyle{empty}
+
+\pagestyle{plain}
+\doublespace
+%%%%%%%%%%% Article Main Text %%%%%%%%%%%%%
+
+\section{Introduction}
+  
+  As Chinese economy is increasingly important to global economy, however, her financial market is still, to some extent, at some rudimentary state. Till April 16th 2010 Chinese financial market had launched the first index futures--CSI300(trading code:IF) which is playing a vital role in institutional investor asset pool as an high-efficient and low-cost arbitrage tool. Moreover, until April 16th 2015, Chinese authority decided to launch the other two types of Index futures--CSI500(trading code:IC) and SSE50(trading code:IH) which  separately represents the small-cap stocks and big-cap stocks. Details about the contract are listed in Table \ref{Contract}. 
+  
+  The function of index futures market has been a prevailing topic in both academic and industry domain since 1980s. Because of high leverage effect, lower transaction cost, higher liquidity etc, informed investors would prefer to trade in index futures market(\cite{Berkman2005}), which may contribute to the lead-lag relationship between futures market and spot market(\cite{chan1992}). It seems that researchers have reached to an agreement that in developed financial market such as in United States and German, index futures is playing a crucial role in price discovery and volatility spillover effects(\cite{kawaller1987},\cite{stoll1990},\cite{kim1999},\cite{tse1999},\cite{booth1999}). Also in other markets like Hong Kong(\cite{so2004}), Taiwan and Singapore(\cite{roope2002}) futures market contains the most information compared to spot market, an interesting phenomenon existed that Singapore futures market influence primarily on Taiwan indices rather than Taiwan futures market itself. In Chinese mainland market,  some literature showed different conclusions in terms of price discovery ability of CSI300 index futures market may result from different sample intervals. (\cite{yang2012}) points out that the cash market is found to play a more dominant role in the price discovery process just after the introduction of index futures, while the empirical result of (\cite{hou2013}) illustrates that the CSI300 index futures market plays an important role in the price discovery process about one year after its inception and new information is disseminated more rapidly in the stock index futures market than the stock market. To our best knowledge, there is no related literature that takes into consideration of newly-established two index futures--CSI500 and SSE50, what is more, history is in astonishing similarity, just two months after the birthday of the two index futures, like the fate of CSI300(\cite{yang2012}), Chinese financial market experienced a Big Fall that slumped over 30\% between June and July in 2015. We would like to ask a question: Are index futures the bad boys?
+  
+  Since the Big Fall occured so violently that Chinese authority shackled the index futures with a series regulations that almost paralyze the index futures market, details are listed in Table \ref{Regulation}. What about reactions of the three index futures to such shorting bans? Are there any differences among them? Our empirical results reveal that after the constraint, compared to CSI300 that has over 5 years history, while the infantile index futures CSI500 unexpectedly expressed even relatively better price discovery ability, although spot markets of the three indices all dominant the lead-lag relationship. 
+  
+  Shorting ban or short-sale restriction is another prevalent issue that in US post-crisis period researchers began to re-examine the regulations conducted during the crash time in 2008. From different perspects, a large body of literature confirm that the short sale ban is associated with a dramatical evaporation of liquidity and a severe degradation in market quality, as measured by spreads, price impacts, and intraday volatility(\cite{saffi2010},\cite{battalio2011},\cite{grundy2012},\cite{boehmer2013},\cite{beber2013}). In Chinese mainland market, there are a few related literature about shorting ban since Chinese financial market inherently lack of short-selling, even though she lauched a pilot scheme in March 2010 to lift the ban on short-selling, the high transaction cost and inadequacy of lenders(\cite{chen2013}) still shackled short sellers.
+   
+  The main contributions of this paper are listed as follow. First, we provide an insight that the reactions of newly lauched index futures when they encounter shorting ban during the Big Fall from the point view of market efficiency and pricing discovery ability . On the one hand, we test the efficiency of both spot and futures markets by employing auto-correlation test with bootstrap, automatic vriance ratio and spectral shape test. We find that there exists big difference before and after shorting ban regulations that market efficiency of both spot and futures market significantly deterierated.  On the other hand, by applying VECM we can obtain price ability comparison across the three index futures with four maturities. Second, we try to break up the pandemic rumor that index futures trigered the market crash, actually, in the lead-lag relationship between Chinese spot and index futures we find that for all the three types of index futures are mostly driven by spot market, that is, it is unfair to blame the futures as the main reason of the Big Fall. Third, as far as we know, we are the first paper that apply relatively large sample interval from April 16th 2015 to December 31st 2015 for the three index futures with 1-minute high frequency data, which can avoid the shortcomings--immaturity of CSI300 and too narrow time window for nascent index futures compared to \cite{yang2012} and \cite{hou2013}. With the aid of such data, we can set the CSI300 spot-futures pair as benchmark to excavate the mechanism of price discovery among different index futures. 
+
+
+\section{Backgroud}
+As the first equity index launched by the two exchanges together, CSI300 aims to reflect the price fluctuation and performance of China A share market. CSI300 is designed for use as performance benchmarks and as basis for derivatives innovation and indexing. After the founding of CSI, the management, rights and interests of CSI300 was transferred to CSI. It has been calculated since April 8th 2005 whose value is normalized relative to a base of 1000 on December 31st 2004.\footnotemark 
+
+
+\footnotetext{The introductions of CSI300, CSI500 and SSE50 are cited from \href{http://www.cffex.com.cn/en_new/sspz/hs300zs/}{China Financial Futures Exchange website}}
+
+CSI500 Index selects 500 Middle and small stocks of good liquidity and representativeness from Shanghai and Shenzhen security market by scientific and objective method. Selection criteria of CSI500 is as follows: First rank stocks in the index universe (Excluding the stocks either in CSI300 or rank top 300 in Shanghai and Shenzhen stock market by daily average total market capitalization of the past recent year) by daily average trading value during the past recent year (in case of a new issue, during the time since it was listed) in descending order and delete the bottom ranked 20\% stocks. Then rank the rest stocks by daily average total market capitalization of the most recent year in descending order, those who rank top 500 are selected as CSI500 constituents. CSI500 aims to comprehensively reflect the price fluctuation and performance of the small-cap companies in Shanghai and Shenzhen securities market.
+
+SSE50 Index selects 50 largest stocks of good liquidity and representativeness from Shanghai security market by scientific and objective method. The objective is to reflect the complete picture of those good quality large enterprises, which are most influential in Shanghai security market.
+
+In a sum, corresponding index is underlying asset of the related index-future contracts. 
+
+Then we would like to introduce the advent of Chinese Stock Index Futures. On April 16th 2010, the first Chinese index futures--CSI300 lauched, which means a new era of Chinese financial market that investors can also protect themselves with short postion of index futures to hedge downside risk(without selling stocks). However, the high barriers to enter the futures market for most individual investors since they are required to deposit at least 500,000 CNY and pass the qualification exam, while the minimum account size for domestic institutional investors is 1,000,000 CNY, recently, QFIIs(Qualified Foreign Institutional Investors) are still forbidden to trade. According to monthly report from China Securities Depository and Clearing\footnotemark in Table\ref{MarketV}, we know that Until the end of December 31st 2015, the total number of individuals' accounts number are 50,167,939, where 93.28\% accounts' market value are less than 500,000 CNY, in contrast, total number of Institutions' accounts number are 65,507, where 65.1\% accounts' market value are over 500,000 CNY. So we could infer that most investors in futures market are domestic institusional investors. Five year later, on April 16th 2015, the other two index futures--CSI500 and SSE50 were established. 
+
+\footnotetext{The monthly report of Chinese A-share account market value are cited from \href{http://www.chinaclear.cn/zdjs/editor_file/20160322100127671.pdf}{ China Securities Depository and Clearing Co., Ltd}}
+
+In the last, we would like to briefly introduce the Big Fall. After the Shanghai Composite Index reached its peak at 5178.34 on June 12th 2015, then plummeted to 3373.54 on July 9th 2015(plunged over 34\% in one month, 19 trading day actually), thereafter with some big jolt, on Auguest 26th 2015 it reached the local low point at 2850.71(dropped over 44\% in less than three month). In the meantime, a series of measures are taken to bailout the market. Among the series of actions what we should note is that on July 4th 2015, 21 main domestic brokerages said that they would invest 19.3 USD billion in a new blue-chip fund to stabilize the market, and vowed not to sell any of their own proprietary equity holdings. In addition, on July 9th 2015, China Development Bank and the Export-Import Bank of China said they would not sell shares, and look to buy more stock. Even though there are not evident official regulations fobidening selling stock, we regard July 9th 2015 as the watershed of shorting ban combine with the measure executed in futures market on the same day(listed in Table\ref{Regulation}).
+
+As we can see in the Figure\ref{IF00}, Figure\ref{IC00} and Figure\ref{IH00}, the basises of the three futures(current month)-spot pairs fluctuated from positive to negative fiercely from April 16th 2015 to December 31st 2015. 
+
+\begin{sidewaysfigure}[b]
+  \caption{ Price and basis of IF00}
+  \label{IF00}
+  \begin{center}
+    \includegraphics[scale = 0.8]{IF00.png}
+  \end{center}
+  \scriptsize{Source: Wind}
+\end{sidewaysfigure}
+
+
+
+\begin{sidewaysfigure}[b]
+  \caption{ Price and basis of IC00}
+  \label{IC00}
+  \begin{center}
+    \includegraphics[scale = 0.8]{IC00.png}
+  \end{center}
+  \scriptsize{Source: Wind}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[b]
+  \caption{ Price and basis of IH00}
+  \label{IH00}
+  \begin{center}
+    \includegraphics[scale = 0.8]{IH00.png}
+  \end{center}
+  \scriptsize{Source: Wind}
+\end{sidewaysfigure}
+
+
+
+
+
+\begin{sidewaystable}[b]
+  \caption{Contract specifications of the three Chinese stock index futures }
+  \label{Contract}
+  \begin{center}
+    \begin{tabular}{ c |  p{5cm} | p{5cm} | p{5cm}  }
+      \hline
+      Trading Code & IF & IC & IH \\
+      \hline \hline
+      Underlying Index & CSI300 Index  & CSI 500 Smallcap Index  &  SSE 50 Index \\
+      \hline
+      Contract multiplier & CNY 300  & CNY 200  & CNY 300  \\
+      \hline
+      Tick size & 0.2 point & 0.2 point & 0.2 point \\
+      \hline
+      Contract months	&  Monthly: current month, next month, next two calendar quarters (four total) & The same as IF  & The same as IF\\
+      \hline
+      Trading hours & Before January 1st 2016, 9:15 am to 11:30 am, and 1:00 pm to 3:15 pm, After January 1st 2016,changed as the spot market, that is, 9:30 am to 11:30 am, and 1:00 pm to 3:00 pm   & The same as IF  & The same as IF\\
+      \hline
+      Limit up/down &  $+/- 10 $ percent of settlement price on the previous trading day & The same as IF   & The same as IF \\ 
+      \hline
+      Margin requirement & After January 1st 2016, changed to $40\% $ for non-arbitrage account and $20\% $ & The same as IF & The same as IF \\
+      \hline
+      Last trading day & The third friday of the contract month, postponed to next trading day if it is a holiday & The same as IF & The same as IF \\
+      \hline
+      Delivery day  & The same as the last trading day & The same as the last trading day & The same as the last trading day\\
+      \hline
+      Settlement method & Cash settlement & Cash settlement & Cash settlement \\
+      \hline
+      Exchange & China Financial Futures Exchange & China Financial Futures Exchange & China Financial Futures Exchange\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{sidewaystable}
+
+
+\begin{sidewaystable}[b]
+  \caption{The log of Chinese stock index futures market regulation in 2015}
+  \label{Regulation}
+  \begin{center}
+    \begin{tabular}{p{2cm} | p{7cm} | p{9cm}}
+      \hline
+      Date & Event  & Details\\
+      \hline 
+      July 8th 2015 & Raise the margin rate of CSI 500 Smallcap Index Futures &  Since the delivory on July 8th 2015, the present sell maitainace margin rate will up from $10\%$ to $20\%$, furthermore, since July 9th 2015, the margin rate will up to $30\%$. In the same time, in the spot market the institutional investors were forbidden to sell securities. \\
+      \hline
+      July 31st 2015 & Change the standard of transaction fee & Transaction fee is consisted of trading fee and declared fee.  \\
+      \hline
+      August 25th 2015 & Raise the transaction fee & Transaction fee is up to $1.15\%\% $\\
+      \hline
+      August 25th 2015 & Raise non-arbitrage maitainance margin & Since the delivory on August 26th 2015, from $10\%$ to $12\%$, since August 27th 2015, up to $15\%$, since August 28th 2015, up to $20\%$ \\
+      \hline
+      August 25th 2015 & Raise non-arbitrage maitainance margin & Since the clearance on August 31st 2015, for the non-arbitrage account the maitainance margin rate up to $30\%$  \\
+      \hline
+      September 2nd 2015 & Raise the transaction fee  & The transaction fee of open and close the new postion in the same day up to $23\%\% $ \\
+      \hline
+      September 2nd 2015 & Raise the maitainance margin & For non-arbitrage account from $30\%$ up to $40\%$, for arbitrage account from $10\%$ up to $20\%$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+\end{sidewaystable}
+
+
+\begin{table}[b]
+\caption{The market value distribution of A-share accounts in December 2015}
+  \label{MarketV}
+  \small
+  \begin{center}
+    \begin{tabular}{c | c | c | c | c | c | c }
+    \hline
+   \multirow{2}{*}{Market Value(CNY)}  & \multicolumn{2}{c|}{Individuals} & \multicolumn{2}{c|}{Institiutions} & \multicolumn{2}{c }{Total} \\
+   \cline{2-7}
+   & Accounts No. & Ration(\%) & Accounts No. & Ration(\%) & Accounts No. & Ration(\%)\\
+    \hline
+    less then 10,000 & 11,612,075 & 23.15 & 4,026 & 6.15  & 11,616,101 & 23.12\\
+    \hline
+    10,000 to 100,000  & 24,323,556 & 48.48 & 8,028 & 12.26 & 24,331,584 & 48.44\\
+    \hline
+    100,000 to 500,000  & 10,860,279  & 21.65  & 10,806  & 16.50  & 10,871,085 & 21.64\\
+    \hline
+    500,000 to 1 million  & 1,881,845  & 3.75   & 5,752   & 8.78   & 1,887,597  & 3.76\\
+    \hline
+    1  to 5 million  & 1,315,609  & 2.62   & 11,864    & 18.11    & 1,327,473  & 2.64\\
+    \hline
+    5  to 10 million  & 109,951  & 0.22    & 4,389     & 6.70     & 114,340   & 0.23\\
+    \hline
+    10  to 100 million  & 60,207  & 0.12    & 11,711      & 17.88      & 71,918   & 0.14\\
+    \hline
+    over 100 million  & 4,417  & 0.01    & 8,931      & 13.63      & 13,348   & 0.03\\
+    \hline
+    Total & 50,167,939  & 100.00    & 65,507      & 100.00     & 50,233,446   & 100.00\\
+    \hline
+    \end{tabular}
+    \end{center}
+
+\end{table}
+
+
+
+
+\section{Data}
+We use the high frequency data from Wind which is the leading provider of financial data, information and services in mainland China. The data starts from April 16th 2015 to December 31st 2015 for three Chinese index spot and futures including the two newly-lauched index futures with 1 minute interval. In most literature, they mainly focus on current month futures, since more trading volume, smaller bid-ask spread or more liquidity, and most traders engage in this type futures.   In the following, we will use the trading code, for instance, IF00, IC01 and IH02 to represent the CSI300 current month future, CSI500 next month future and SSE50 next seasonal month future separately. As before January 1st 2016, the trading time between spot and futures market are different, we unify both according to spot market, that is, 9:30am to 11:30am and 1:00pm to 3:00pm . Table\ref{summaryofIndex} briefly report the statistical summary of both spot and futures logarithmic returns. Since the high frequency with 1-minute interval, the mean and median are all returns very near to 0 with 0.01\% precision. As we can see, for the quantity of trading volume and holding position, IF futures are the largest, then followed by IH and IC. Intuitively, it can be explained that IF futures have relatively longer history, so the liquidity are better that institutional investors would prefer to trade them. In addtion, IH are related to the top 50 securities composite index in Shanghai Security Exchange, however, IC are related to small caps as we introduced before. In order to hedge the risk of security in their asset pool which mainly are big caps stocks, most institutional investors incline to utilize IH rather than IC.
+
+\begin{table}[b]
+  \caption{The statistical summary of Chinese stock index futures market }
+  This table shows the statistical summary of Chinese index futures, where the mean and median of the three index futures are all very near to 0 with precision of 0.01\%. We multiply each number(change of logarithm) of minmium, maxmium and standard error by 100. Moreover, the volumn and position are seperately the mean of contract traded and holded per minute. 
+  \label{summaryofIndex}
+  \begin{center}
+    \begin{tabular}{c | c | c | c | c | c | c }
+      \hline
+      Index & Trading code  & Min($\%$) & Max($\%$) & Std($\%$) & Volume & position \\
+      \hline 
+      \multirow{3}{*}{Spot} & CSI300 & $-7.64$ & $6.36$ & $25.2$ & 3017.05 & $-$    \\
+      
+       & CSI500 & $-6.96$ & $4.97$ & $16.91$ & 540.09 & $-$   \\
+      
+        & SSE50 & $-8.75$ & $6.80$ & $15.4$ & 119.67 & $-$  \\
+      \hline
+      \multirow{4}{*}{IF} & IF00 & $-8.10$ & $7.33$ & $25.04$ & 3016.98 & 90449.47    \\
+      
+       & IF01 & $-8.36$ & $7.67$ & $24.87$ & 532.12 & 31441.10   \\
+      
+        & IF02 & $-8.70$ & $7.78$ & $24.65$ & 116.68 & 23426.83  \\
+      
+      & IF03 & $-9.45$ & $8.07$ & $24.58$ & 18.84 & 6546.20  \\
+      \hline
+      \multirow{4}{*}{IC} & IC00 & $-10.29$ & $8.27$ & $18.21$ &  455.82 & 16070.62    \\
+      
+       & IC01 & $-5.47$ & $8.14$ & $19.46$ & 65.55 & 4732.25  \\
+      
+        & IC02 & $-8.12$ & $7.08$ & $20.95$ & 16.02 & 2691.08   \\
+      
+      & IC03 & $-9.66$ & $8.00$ & $21.59$ & 3.03 & 1102.13  \\
+      \hline
+      \multirow{4}{*}{IH} & IH00 & $-6.67$ & $8.36$ & $16.42$ & 747.80 & 26213.61   \\
+      
+       & IH01 & $-5.62$ & $8.39$ & $17.24$ & 91.94 &  7397.22 \\
+      
+        & IH02 & $7.10$ & $8.77$ & $18.38$ & 31.04 & 5158.77\\
+      
+      & IH03 & $-8.20$ & $8.67$ & $19.41$ & 2.32 & 591.16  \\
+      \hline
+      
+    \end{tabular}
+    \medskip
+  \end{center}
+  
+\end{table}
+
+
+
+\section{Empirical methodology}
+
+
+We focus on the shorting ban effects that exert to index futures and spot market with two different aspects. Firstly, we employ data-independent automatic variance ratio and spectral shape tests to shed light on the market efficiency of spot and futures market. Secondly, we apply price discovery measures based on VECM to show the effects of shorting ban on index futures.
+
+\subsection{Measures of Spot and futures market efficiency}
+
+By employing data-dependent automatic variance ratio test and spectral shape test in \cite{choi1999}. the variance ratio for retrun series ${r_t}$ is defined as 
+\begin{equation}
+VR(l) = \frac{Var(r_t-r_{t-l})}{lVar(r_t-r_{t-1})}
+\end{equation}
+When $\{\Delta r_t\}$ is serially uncorrelated, i.e., when return series is a random walk process, $VR(l)$ is equal to one at all lag truncation points $l$. The variance ratio estimator is defined as
+\begin{equation}
+\hat{VR}(l) = 1 + 2\sum_{i = 1}^{T-1} k(i/l)\hat{\rho}(i), \hat{\rho}(i) = \sum_{i = 1}^{T-i} \Delta r_t \Delta r_{t+i} / \sum_{i = 1}^{T} \Delta r_t^2 
+\end{equation}
+
+\begin{equation}
+k(x) = \frac{25}{12 \pi^2 x^2} \left[ \frac{\sin(6\pix/5)}{6\pix/5 - \cos(6\pix/5)}  \right]  \nonumber
+\end{equation}
+
+The asymptotic distribution of the test is
+\begin{equation}
+VR = \sqrt{T/l}[\hat{VR}(l)-1]/\sqrt{2} \stackrel{d}{\rightarrow} N(0,1)\  \  as\  \   T\rightarrow\infty, l\rightarrow\infty, T/l\rightarrow\infty
+\end{equation}
+where $\stackrel{d}{\rightarrow}$ denotes the convergence in distribution.
+
+The spectral shape tests are:
+\begin{equation}
+AD_T = \int_{0}^{1}U_T^s(r)^2/[r(1-r)]dr
+\end{equation}
+\begin{equation}
+CVM_T = \int_{0}^{1}U_T^s(r)^2 dr
+\end{equation}
+where
+\begin{equation}
+U_T^s(r) = \sqrt{2}T^{1/2}\left[ \frac{2\pi}{T} \sum_{s=1}^{[Tr/2]} I\left( \frac{2\pi s}{T} \right) - \frac{r}{2} \sum_{t=2}^{T} \Delta r_t^{2} / T \right]/ \left[ \sum_{t=2}^{T} \Delta r_t^{2} / T \right]
+\end{equation}
+\begin{equation}
+I(\lambda) = (2\pi T)^{-1} |\sum_{t=0}^{T-1} \Delta r_t exp(-i\lambda t) |^2 \nonumber
+\end{equation}
+In \cite{durlauf1991} Corllary 2.1 lists the asymptotic behavior of spectral shape tests including Anderson-Darling statistic and Cramer-von Mises statistic. Moreover, the $(5\%, 1\%)$ asymptotic critical values of $AD_T$ and $CVM_T$ are separately $(2.49,3.86)$ and $(0.46, 0.74)$.
+
+
+\subsection{Measures of pricing discovery ability of index futures}
+
+Taking the logarithms of futures $f_t$ and spot prices $s_t$ separately, and we know that they are cointegrated with a common stochastic trend for derivatives and underlying should have the same risk factor. According to cost-of-carry model\cite{bohl2011}, we can present the cointegrating relationship as follow:
+
+\begin{equation}
+  f_{t} = a_{0} + a_1s_t
+\end{equation}
+where $a_0$ related to the term to maturity, $a_1$ should approximately equal to 1 if the market is efficient and frictionless.
+
+We contract the VECM with three dummy variables: $D_1,D_2,D_3$, and select 5 as the lag levels by SIC criteria, in other words, in the following equations $n = 5$.
+\begin{equation}
+\label{eq2}
+\Delta s_t = b_{s,0} + (D_{s,1}+D_{s,2}+D_{s,3})ect_{t-1}+ \sum_{i=1}^n b_{s,s}^i \Delta s_{t-i} + \sum_{i=1}^n b_{f,s}^i \Delta f_{t-i} +e_{s,t}
+\end{equation}
+
+\begin{equation}
+\label{eq3}
+\Delta f_t = b_{f,0} + (D_{f,1}+D_{f,2}+D_{f,3})ect_{t-1}+ \sum_{i=1}^n b_{s,f}^i \Delta s_{t-i} + \sum_{i=1}^n b_{f,f}^i \Delta f_{t-i} +e_{f,t}
+\end{equation}
+where $b_{s,0}$ and $b_{f,0}$ are the constant term, $D_1,D_2,D_3$ are dummy variables separately represent the period from November 28th 2012 to April 16th 2015, April 16th 2015 to July 9th 2015, and July 9th 2015 to November 28th 2015, that is, $D_i=1 (i=1,2,3)$ when data is in the corresponding period otherwise it equals to 0. Moreover, $ect_{t-1}= f_t-a_0-a_1 s_t$ represents the error correction term. $e_{j,t} (j = s, f)$ are serially uncorrelated innovations with mean zero and a covariance matrix with diagnoal elements $\sigma_{1}^{2}$ and $\sigma_{1}^{2}$ and off-diagonal elements $\rho\sigma_{1}\sigma_{2}$.  
+
+Two aspects -- short-term and long-term -- relationships exist between index futures and spot index, as the short-term effects can be explained by the lags of $f_t$ and $s_t$, while the coefficients of  $ect_{t-1}$, the sum of $D_1, D_2,D_3$, measures the speed of reaction to long-term effects. For instance, there exists disequilibrium that index future price is somewhat relatively higher than spot price, it will lead to potential negative change of futures price or positive change of spot index if the arbitrage force can correct the mispricing by selling on futures and buying stocks to obtain the riskless profits. However, as the index is not a tradable asset but the weighted average of individual stocks. Actually, if there exists momentum effect, some constituting stocks may decline even more when the index is already lower than the corresponding futures, which contributes to even larger deviation of futures compared to index. So the coefficients of error correction term in above VECM can be negative or positive.
+
+The short-term prediction hypothesis supposes that the lags of futures and spot prices have salient predictive power of each other current prices(\cite{bohl2011}). But in this paper, we focus on the long-term relationship between futures and index. Firstly, as we have mentioned before, the Gonzalo-Granger measures for spot and futures are calculated with the corresponding dummy variables in equation\ref{eq2} and equation\ref{eq3}.
+\begin{equation}
+\label{eq4}
+G_s = \frac{-D_{f,i}}{D_{s,i} - D_{f,i}},G_f = \frac{D_{s,i}}{D_{s,i} - D_{f,i}}  (i = 1,2,3)
+\end{equation}
+ In fact, we can get $G_s = 1 - G_f$ .
+
+
+Secondly, the Hasbrouck measure is defined as follow
+\begin{equation}
+H_s(u) = \frac{(-D_{f,i}\sigma_1 + D_{s,i}\rho\sigma_2)^2} {(-D_{f,i}\sigma_1 + D_{s,i}\rho\sigma_2)^2 + (D_{s,i}\sigma_2\sqrt{1-\rho^2})^2}
+\end{equation}
+
+\begin{equation}
+H_f(l) = \frac{(D_{s,i}\sigma_2\sqrt{1-\rho^2})^2} {(-D_{f,i}\sigma_1 + D_{s,i}\rho\sigma_2)^2 + (D_{s,i}\sigma_2\sqrt{1-\rho^2})^2}
+\end{equation}
+
+Actually, Gonzalo and Granger model considers the components of common factor and the error correction process, while the Hasbrouck model evaluates each market's contribution to the variance of the innovations to the common factor. The two models are directly related and will report similar results if the redisuals are uncorrelated between market, but typically provide different results due to the existence of correlation in residuals(\cite{baillie2002}). In our paper, we focus on the price discovery ability of futures market, which means the $G_f$ and the average of Hasbrouck upper bounds and lower bounds in futures market.
+
+
+\section{Empirical analysis}
+
+
+\subsection{Market efficiency}
+
+
+\subsubsection{Automatic variance ratio and spectral shape test}
+ Now we turn to another test that can judge the randomness of serises from the perspective of variance ratio. Table\ref{VR} collects the results of automatic variance ratio and spectral shape test. By employing the two tests, it shows that almost all statistics of spot no matter in which panel are larger than futures', which in accord to the former findings in autocorrelation test. In spot market, the market efficiency ordered from high to low as SSE50, CSI300 and CSI500, which correspond to the scales of capitalization. On the other hand, in futures market, futures with shorter maturity turn out to be more efficient, which also in consistent to former results.
+ 
+ In a sum, above autocorrelation tests report similar empirical results that after the shorting ban, both spot and futures market experience significantly dropping in terms of market efficiency.
+
+\begin{sidewaystable}[b]
+  \caption{Variance ratio and spectral shape test}
+  \label{VR}
+  This table summarise the results of automatic variance ratio test of spot market and index futures market. The almost same results as Box-Ljung test reported in  Variance ratio test. With spectral shape test, we also obtain similar conclusion that the shorting ban is vital to both markets. What is more, the market efficiency of futures market is evidently more high. In spot market, the market efficiency ordered from high to low as SSE50, CSI300 and CSI500. In futures market, futures with shorter maturity is more efficient, the market efficiency ordered from high to low as IF, IH, IC. It means that futures with longer history or represent big caps are more efficient, which is in accordance to our intuitive. $ ^{*}$, $ ^{**}$,$ ^{***}$denote significance at the $1\%$,$5\%$ and $10\%$ level separately.
+  \begin{center}
+    \begin{tabular}{c c c c | c c c    }
+      \hline
+       Index & VR & AD_{T} & CVM_{T}   & VR & AD_{T} & CVM_{T}  \\
+     &\small{ Panel A }  & & & \small{Panel B}  & &    \\
+      \hline
+      CSI300 & $8.27^{***}$ & $542.15^{***}$ & $116.26^{***}$   & $12.92^{***}$ & $1180.39^{***}$ & $254.26^{***}$  \\
+
+      CSI 500 & $11.46^{***}$ & $1011.07^{***}$  & $217.25^{***}$ & $9.79^{***}$ & $1217.51^{***}$  & $266.11^{***}$   \\
+
+      SSE 50& $3.39^{***}$ & $193.72^{***}$ & $41.31^{***}$  & $14.93^{***}$ & $691.29^{***}$  & $148.24^{***}$    \\
+      \hline
+      IF00 & $-0.24$ & $0.94$ & $0.16 $  & $0.27$ & $-3.64^{**}$ & $0.68^{**}$  \\
+
+      IC00 & -1.05 & 2.05 & 0.39   & -3.93^{***} & $-3.92^{**}$ & $0.73^{**}$  \\
+      
+      IH00 & $-1.42$ & $4.06^{***}$ & $0.63^{**}$   & -5.63^{***} & $2.87^{**}$ & $0.57^{**}$  \\
+      
+      \hline
+
+    \end{tabular}
+    \medskip
+  \end{center}
+  
+\end{sidewaystable}
+
+
+\subsection{VECM}
+  
+  The left panel of Table\ref{summaryofGGH} reports the conintegration  relationship of spot and futures. Other papers also report cointegration between spot and futures returns, for instance, \cite{tse1999} \cite{wahab1993} for the US, \cite{turkington1999} for Australia, \cite{yang2012} for China. 
+  
+  We apply the VECM with dummy variables that as indicators to represent the major events in three time period that the birth of two indefutures(April 16th 2015), and the shorting ban execution(July 9th 2015). With reference of \cite{gonzalo1995} and \cite{hasbrouck1995}, we employ the two price discovery measures to judge the information contents of between spot market and futures market respectively. As the IF were launched in April 16th 2010 which are the most dominant among the three , we firstly analyze the price discovery ability of IF in the three periods. It shows in the upper panel that except IF03 just slightly decreases, the other three experience a shape drop between Period 2 and Period 3 in both measurements, since the implementation of shorting ban. Interestingly, the difference between Period 1 and Period 2 is more gentle, and it seems that the advent of two new futures perhaps disperses the price discovery ability of IF, since the average level of Period 1 is higher than Period 2 in the two measures. In the lower panel of Table\ref{summaryofGGH}, it reports that after the shorting ban IC and IH instead of getting hurt from shorting ban, almost all the price discovery ability increase except IC03, which may because of stringent  limitation on trading volume per day, as the former IF traders' demand for hedging, arbitraging or speculating transfer from IF to IC and IH. 
+  
+  
+  
+  
+\begin{sidewaystable}[b]
+  \caption{The summary of price discovery measures for Chinese stock index futures market }
+  This table illustrate the Gonzalo-Granger(1995) and Hasbrouck measure which are based on the VECM with dummy variables. It provide an interesting insight of pricing discovery ability of corresponding index future, where Period 1, 2, 3 are from November 28th 2012 to April 16th 2015, April 16th 2015 to July 9th 2015, JUly 9th 2015 to November 27th 2015, respectively. The middle panel collects the results of Gonzalo-Granger measure for index futures, while the right panel reports the mean of upper bound and lower bound with Hasbrouck measure.
+  \label{summaryofGGH}
+  \begin{center}
+    \begin{tabular}{c | c | c | c  c  c | c  c  c}
+      \hline
+      Index & Trading code & Conintegration &  \multicolumn{3}{c|}{ Gonzalo-Granger measure} & \multicolumn{3}{c}{Hasbrouck measure}
+      \\
+       & & with index & Period 1($\%$) & Period 2($\%$) & Period 3($\%$)& Period 1($\%$) & Period 2($\%$) & Period 3($\%$)  \\
+      \hline 
+      \multirow{4}{*}{CSI300} & IF00 & Yes & $18.99$ & $14.19$  & $4.05$ & $48.35$ & $41.72$ & $31.33$
+      \\
+       & IF01 & Yes & $22.96$ & $20.09$ & $1.85$ & $55.89$ & $50.73$ & $27.24$     \\
+       & IF02 & Yes & $25.03$ & $20.48$ & $0.82$ & $60.52$ & $51.73$ & $22.38$   \\
+       & IF03 & Yes & $25.14$ & $21.45$ & $16.35$ & $62.96$ & $56.24$ & $41.37$    \\
+       \hline
+       \multirow{4}{*}{CSI500} & IC00 & Yes & $-$ & $6.79$ & $11.68$ & $-$ & $46.26$ & $50.83$    \\
+       & IC01 & Yes & $-$ & $9.61$ & $11.42$ &$-$ & $48.34$ & $50.48$  \\
+       & IC02 & Yes & $-$ & $10.56$ & $11.74$ &$-$ & $49.17$ & $50.92$    \\
+       & IC03 & Yes & $-$ & $17.19$ & $1.55$ &$-$ & $58.34$ & $43.74$   \\
+       \hline
+       \multirow{4}{*}{SSE50} & IH00 & Yes & $-$ & $2.05$ & $6.46$ &$-$ & $26.93$ & $23.33$     \\
+       & IH01 & Yes & $-$ & $0.60$ & $8.48$ &$-$ & $27.49$ & $23.69$   \\
+       & IH02 & Yes & $-$ & $5.16$ & $13.05$ &$-$ & $25.12$ & $22.41$     \\
+       & IH03 & Yes & $-$ & $25.16$ & $24.30$ &$-$ & $23.18$ & $22.40$   \\
+       \hline
+      
+    \end{tabular}
+    \medskip
+      
+  \end{center}
+\end{sidewaystable}
+
+
+
+
+
+
+\section{Conclusion}
+In this paper, we have studied the effects of shorting ban that lead to the disorder in price discovery and inefficiency of spot and futures market.  As we have see that before the shorting ban, the price discovery and market efficiency of the CSI300 spot and futures market do not exist big differences even though the advent of two new futures. However, as the shorting ban executed, the market efficiency of all spot and futures market experience nightmare, while the price discovery ability of CSI500 futures(IC) and SSE50 futures(IH) do not affected even better than before, perhaps due to the stern limitations on CSI300 futures(IF) that squeeze out investors to IC and IH. In addition, we find that the longer the maturity is, the better price discovery ability of future among the three.
+
+
+
+
+\bibliographystyle{apa}
+\bibliography{ref}
+
+
+
+
+
+
+
+\end{document}
